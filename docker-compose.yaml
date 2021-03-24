@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  api:
+    container_name: api
+    volumes:
+      - .:/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dspd_project_api
+    ports:
+      - "5000:5000"
+    command: ["python", "index.py"]
